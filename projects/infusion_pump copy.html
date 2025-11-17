@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Infusion Pump – Bongani Dindi</title>
+  <meta name="description" content="Veterinary positive‑displacement infusion pump: overview, objectives, technical work, and results." />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#ffffff; --text:#111111; --muted:#6b7280; --border:#e5e7eb; --accent:#111; --max:960px }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:"Lora", Georgia, serif; line-height:1.75}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%; height:auto; border:1px solid var(--border)}
+    .container{max-width:var(--max); margin:0 auto; padding:24px}
+
+    header{margin:10px 0 28px}
+    header a{border:1px solid var(--text); padding:.45rem .8rem; display:inline-block; border-radius:0}
+    header a:hover{background:#111; color:#fff; text-decoration:none}
+    h1{font-family:"Playfair Display", Georgia, serif; font-weight:700; font-size:clamp(32px,5.5vw,64px); line-height:1.08; margin:16px 0 6px}
+    .eyebrow{letter-spacing:.35em;color:var(--muted);text-transform:uppercase;font-size:12px;margin:6px 0 10px}
+
+    h2{font-family:"Playfair Display", Georgia, serif; font-size:26px; margin:22px 0 8px}
+    .lead{color:var(--text)}
+
+    .card{background:#fff; border:1px solid var(--border); padding:18px; border-radius:0}
+    ul{padding-left:1.1rem}
+    pre{background:#fafafa; border:1px solid var(--border); padding:12px; overflow:auto}
+
+    .meta{color:var(--muted)}
+    footer{border-top:1px solid var(--border); margin-top:32px; padding-top:18px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="../index.html">← Back to Portfolio</a>
+      <p class="eyebrow">Biomedical • Mechatronics</p>
+      <h1>Positive‑Displacement Infusion Pump (Veterinary)</h1>
+      <p class="meta"><strong>Role:</strong> System design & analysis — architecture, rate/volume modes, pressure capability, and controls.</p>
+    </header>
+
+    <section class="card">
+      <img src="../images/infusion_pump.jpg" alt="Infusion pump prototype and schematic" />
+      <h2>Overview</h2>
+      <p class="lead">A compact infusion/dispense device for veterinary use. The pump delivers precise small‑volume doses and supports two operating modes: <em>Direct Infusion</em> (rate‑controlled) and <em>Dispense</em> (volume‑controlled). The design emphasizes accuracy at low flow, high back‑pressure tolerance, low power, and leakage resistance.</p>
+    </section>
+
+    <section class="card">
+      <h2>Objectives</h2>
+      <ul>
+        <li>Develop a <strong>positive‑displacement</strong> mechanism to ensure volumetric accuracy at small doses.</li>
+        <li>Implement <strong>rate control</strong> with closed‑loop feedback and <strong>volume batching</strong> with quick fill time.</li>
+        <li>Achieve <strong>high outlet pressure</strong> to handle varying viscosities/nozzles and tubing friction.</li>
+        <li>Minimize electrical power draw via friction reduction and lightweight drivetrain components.</li>
+        <li>Design for robustness, easy assembly, and high back‑pressure resistance before leakage.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Technical Work</h2>
+      <p><strong>Architecture.</strong> Mechanism options (peristaltic vs. piston/syringe). Chosen configuration is a positive‑displacement stage driven by a geared stepper/BLDC with encoder feedback. A flywheel/compensation strategy reduces pulsation and smooths load variations.</p>
+      <p><strong>Control.</strong> Infusion mode uses a PID‑style controller on motor position/velocity with pressure‑proxy limits; Dispense mode runs a calibrated step count to a target volume. Calibration curves convert motor steps → displacement → delivered volume.</p>
+      <p><strong>Sensing & Safety.</strong> Hall/optical encoders for position; optional inline pressure or motor current as back‑pressure proxy; occlusion detection, max‑pressure cutoff, and leak checks.</p>
+      <pre><code>// Pseudocode: dual‑mode control
+if (mode == INFUSION) {
+    rate_cmd_ml_min = setpoint;
+    target_steps_per_sec = k_rate * rate_cmd_ml_min;
+    motor.pidStep(target_steps_per_sec, feedback_steps);
+} else { // DISPENSE
+    target_volume_ml = setpoint;
+    target_steps = k_vol * target_volume_ml;
+    motor.moveSteps(target_steps);
+}
+// Safety: stop if pressure_proxy &gt; threshold or encoder slip detected
+</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Results & Impact</h2>
+      <ul>
+        <li>Achieved <strong>accurate volumetric rate</strong> at low flow with compensation for friction/load changes.</li>
+        <li>Validated <strong>high back‑pressure capability</strong> across different nozzle diameters and viscosities.</li>
+        <li>Reduced power by minimizing drivetrain friction/mass; improved leakage resistance.</li>
+        <li>Modular architecture enables future disposable fluid path and battery operation.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><a href="../index.html">← Back to main portfolio</a></p>
+    </footer>
+  </div>
+</body>
+</html>

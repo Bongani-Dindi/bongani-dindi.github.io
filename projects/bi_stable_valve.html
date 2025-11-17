@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bi-stable clamp valve – Bongani Dindi</title>
+  <meta name="description" content="Bi-stable valve: overview, objectives, technical work, and results." />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg-alt:#f9fafb;
+      --surface:#ffffff;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --border-soft:#e5e7eb;
+      --accent:#111111;
+      --accent-soft:rgba(15,23,42,0.06);
+      --text:#111111;
+      --text-strong:#020617;
+      --muted:#6b7280;
+      --chip:#f3f4f6;
+      --chip-text:#374151;
+      --shadow-soft:0 18px 40px rgba(15,23,42,0.08);
+      --max:960px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:"Lora", Georgia, serif;
+      line-height:1.75;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(15,23,42,0.04), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(148,163,184,0.08), transparent 55%),
+        var(--bg);
+    }
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    img{
+      max-width:100%;
+      height:auto;
+      border-radius:18px;
+      border:1px solid var(--border);
+      display:block;
+    }
+
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:24px 20px 40px;
+    }
+
+    /* HERO LAYOUT */
+    .hero{
+      display:flex;
+      flex-direction:column;
+      gap:1.75rem;
+      margin-bottom:2.25rem;
+    }
+
+    header{
+      margin:4px 0 8px;
+    }
+
+    header a.back-link{
+      border:1px solid var(--accent);
+      padding:.45rem .9rem;
+      display:inline-flex;
+      align-items:center;
+      gap:.35rem;
+      border-radius:0;
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--accent);
+      background:transparent;
+    }
+    header a.back-link:hover{
+      background:var(--accent);
+      color:#ffffff;
+      text-decoration:none;
+    }
+
+    .eyebrow{
+      letter-spacing:.35em;
+      color:var(--muted);
+      text-transform:uppercase;
+      font-size:11px;
+      margin:12px 0 6px;
+    }
+
+    h1{
+      font-family:"Playfair Display", Georgia, serif;
+      font-weight:700;
+      font-size:clamp(32px,4.2vw,44px);
+      line-height:1.12;
+      margin:4px 0 10px;
+      color:var(--text-strong);
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .hero-tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.35rem;
+      margin-top:.45rem;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding:.18rem .7rem;
+      border-radius:999px;
+      border:1px solid var(--border);
+      font-size:.7rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--muted);
+      background:#f9fafb;
+    }
+
+    .hero-media{
+      background:
+        radial-gradient(circle at top, rgba(15,23,42,0.06), transparent 60%),
+        #f9fafb;
+      border-radius:20px;
+      border:1px solid var(--border);
+      padding:1rem;
+      box-shadow:var(--shadow-soft);
+      display:flex;
+      flex-direction:column;
+      gap:.75rem;
+    }
+
+    .hero-caption{
+      font-size:.85rem;
+      color:var(--muted);
+    }
+
+    h2{
+      font-family:"Playfair Display", Georgia, serif;
+      font-size:1.4rem;
+      margin:0 0 .75rem;
+      color:var(--text-strong);
+    }
+
+    .lead{
+      color:var(--text);
+      font-size:1rem;
+    }
+
+    /* CARDS */
+    .card{
+      background:
+        radial-gradient(circle at top left, rgba(15,23,42,0.04), transparent 55%),
+        #ffffff;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:1.4rem 1.5rem;
+      margin-top:1.25rem;
+      box-shadow:var(--shadow-soft);
+      position:relative;
+      overflow:hidden;
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      opacity:0;
+      background:radial-gradient(circle at var(--x,50%) var(--y,0%), rgba(15,23,42,0.06), transparent 55%);
+      transition:opacity .3s ease;
+      pointer-events:none;
+    }
+
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 20px 50px rgba(15,23,42,0.12);
+      border-color:#d1d5db;
+    }
+    .card:hover::before{
+      opacity:1;
+    }
+
+    .section-kicker{
+      font-size:.78rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:.25rem;
+    }
+
+    /* LISTS */
+    ul{
+      padding-left:0;
+      list-style:none;
+      margin-top:.4rem;
+    }
+
+    ul > p{
+      margin:.9rem 0 .25rem;
+      font-weight:600;
+      color:#111827;
+    }
+
+    li{
+      position:relative;
+      padding-left:1.45rem;
+      margin:.28rem 0;
+      font-size:.98rem;
+      color:var(--text);
+    }
+
+    li::before{
+      content:"";
+      position:absolute;
+      left:.3rem;
+      top:.6rem;
+      width:.42rem;
+      height:.42rem;
+      border-radius:999px;
+      background:var(--accent-soft);
+      box-shadow:0 0 0 1px rgba(148,163,184,0.8);
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      margin-top:2.2rem;
+      padding-top:1.2rem;
+      font-size:.9rem;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:.75rem;
+    }
+
+    footer a{
+      color:var(--accent);
+      font-weight:500;
+    }
+
+    /* LAYOUT ON WIDER SCREENS */
+    @media (min-width: 880px){
+      .hero{
+        display:grid;
+        grid-template-columns:minmax(0,1.25fr) minmax(0,1.1fr);
+        align-items:stretch;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{padding:20px 16px 32px;}
+      .card{padding:1.25rem 1.2rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+      <header>
+        <a class="back-link" href="../index.html">← Back to Portfolio</a>
+        <p class="eyebrow">Engineering</p>
+        <h1>Bi-stable clamp valve analysis</h1>
+        <p class="meta"><strong>Role:</strong> Analysis</p>
+        <div class="hero-tag-row">
+          <span class="pill">Embedded 3D printing</span>
+          <span class="pill">Bi-stable mechanisms</span>
+          <span class="pill">Computational analysis</span>
+        </div>
+      </header>
+
+      <div class="hero-media">
+        <img src="../images/bi_stable_valve_img.tiff" alt="Bi-stable schematic" />
+        <p class="hero-caption">
+          Schematic representation of the bi-stable clamp valve used for flow control of Carbopol 980 gel in an embedded 3D printing system.
+        </p>
+      </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="card">
+      <div class="section-kicker">Overview</div>
+      <h2>Energy-efficient snap-through flow control</h2>
+      <p class="lead">
+        This project developed and analyzed a bi-stable clamp valve for precise, energy-efficient flow control in an embedded 3D printer.
+        The bi-stable snap-through mechanism enables rapid state switching without continuous power input, offering a lightweight valve solution
+        that works with high-viscosity Carbopol 980 gels.
+      </p>
+    </section>
+
+    <!-- OBJECTIVES -->
+    <section class="card">
+      <div class="section-kicker">Goals</div>
+      <h2>Objectives</h2>
+      <ul>
+        <li>Evaluate bi-stable mechanisms for ink–gel deposition control.</li>
+        <li>Develop a kinematic, kinetic, and stress analysis of the clamp.</li>
+        <li>Use Python simulation to map a digital design solution space of viable configurations.</li>
+        <li>Assess feasibility, fatigue life, and snap-through dynamics for embedded printing applications.</li>
+      </ul>
+    </section>
+
+    <!-- KEY WORKS -->
+    <section class="card">
+      <div class="section-kicker">Summary</div>
+      <h2>Key Works Completed</h2>
+      <ul> 
+        <p><strong>System Definition &amp; Modelling:</strong></p> 
+        <li>Defined valve geometry, spring stiffness, and energy parameters.</li>
+        <li>Derived analytical equations for strain energy, force balance, and motion dynamics.</li>
+
+        <p><strong>Computational Analysis:</strong></p> 
+        <li>Created Python programs to generate and filter large sets of possible clamp configurations.</li>
+        <li>Simulated energy–displacement curves to identify bistable configurations and predict snap-through motion.</li>
+        <li>Performed static stress, fatigue, and dynamic response analyses using ABS material properties.</li>
+
+        <p><strong>Failure &amp; Fatigue Testing:</strong></p> 
+        <li>Applied Maximum-Normal-Stress, Brittle-Coulomb-Mohr, and Modified Mohr criteria.</li>    
+        <li>Verified infinite fatigue life (&gt;10⁶ cycles) under cyclic loading.</li>   
+
+        <p><strong>Dynamic Response Evaluation:</strong></p> 
+        <li>Derived and solved the equation of motion for the clamp using differential equation solvers in Python.</li>
+        <li>Determined snap-through time of 5–20 ms, confirming rapid switching performance.</li>
+
+        <p><strong>Feasibility Assessment:</strong></p> 
+        <li>Identified 14,410 valid configurations meeting bistability and safety constraints.</li>
+        <li>Verified safety factors &gt; 24 for all designs and actuation power &lt; 18 W.</li>
+      </ul>
+    </section>
+
+    <!-- MECHANISM CONCEPT -->
+    <section class="card">
+      <div class="section-kicker">Concept</div>
+      <h2>Mechanism Concept &amp; Purpose</h2>
+      <p class="lead">
+        The bi-stable clamp valve was developed as an active flow-control mechanism for embedded 3D printing,
+        replacing bulky syringe-driven systems with a lightweight, low-energy, mechanically efficient alternative.
+      </p>
+      <ul>
+        <p><strong>Project Motivation:</strong></p>
+        <li>Enable rapid, precise gel extrusion in embedded 3D printing without relying on high-mass stepper motors.</li>
+        <li>Use passive mechanical stability to hold the valve open or closed <strong>with zero continuous power draw</strong>.</li>
+        <li>Improve controllability and reduce vibration in the printhead assembly.</li>
+
+        <p><strong>Bi-stable Operation:</strong></p>
+        <li>The mechanism exhibits two stable equilibrium states defined by its geometry and stored elastic strain energy.</li>
+        <li>Snap-through between states is initiated by a small actuation input, significantly reducing energy consumption.</li>
+
+        <p><strong>Design Variables:</strong></p>
+        <li>Clamp arm lengths, knee angle, leg stiffness, pre-stress, and geometric asymmetry.</li>
+        <li>Each configuration forms a unique force-displacement and energy-displacement profile.</li>
+
+        <p><strong>Engineering Insight:</strong></p>
+        <li>Bistability enables reliable occlusion of flexible tubing while maintaining low actuation torque.</li>
+        <li>Geometry plays a far stronger role in device performance than material stiffness alone.</li>
+      </ul>
+    </section>
+
+    <!-- COMPUTATIONAL PIPELINE -->
+    <section class="card">
+      <div class="section-kicker">Modelling</div>
+      <h2>Computational Modelling &amp; Analysis Pipeline</h2>
+      <p class="lead">
+        A custom Python-based computational framework was developed to generate, filter, and analyse thousands of clamp
+        configurations, identifying those that satisfy force, stability, and fatigue constraints.
+      </p>
+      <ul>
+        <p><strong>Analytical Model Development:</strong></p>
+        <li>Derived closed-form equations describing strain energy, restoring force, geometry, and system kinematics.</li>
+        <li>Constructed relationships for stable, unstable, and snap-through equilibrium points.</li>
+
+        <p><strong>Automated Python Workflow:</strong></p>
+        <li>Generated parametric sets (<strong>S, A, B, C, Y</strong>) representing all possible design combinations.</li>
+        <li>Applied constraint-based filtering to eliminate non-viable designs.</li>
+        <li>Solved differential equations and located stationary points (minima/maxima) along the energy curve.</li>
+
+        <p><strong>Computational Output:</strong></p>
+        <li>Identified <strong>14,410 viable bi-stable configurations</strong> satisfying stiffness, load, and snapping criteria.</li>
+        <li>Built interactive visualisations to analyse force-displacement behaviour and snap-through thresholds.</li>
+
+        <p><strong>Engineering Insight:</strong></p>
+        <li>The modelling pipeline allowed exploration of thousands of designs that would be impractical to test physically.</li>
+        <li>Filtering logic significantly reduced the design space, revealing key geometric patterns shared by viable clamps.</li>
+      </ul>
+    </section>
+
+    <!-- DYNAMICS -->
+    <section class="card">
+      <div class="section-kicker">Dynamics</div>
+      <h2>Dynamic Behaviour &amp; Snap-Through Response</h2>
+      <p class="lead">
+        The valve’s snap-through motion was analysed using dynamic modelling and ODE integration to assess speed,
+        controllability, and flow-control suitability for high-performance printing.
+      </p>
+      <ul>
+        <p><strong>Equation of Motion:</strong></p>
+        <li>Derived the non-linear ODE governing rotational acceleration of the mechanism.</li>
+        <li>Included strain-energy gradient, mass moment of inertia, and damping effects.</li>
+
+        <p><strong>Numerical Simulation:</strong></p>
+        <li>Implemented a Runge–Kutta (RK4) solver to simulate snap-through transitions.</li>
+        <li>Modelled system trajectories from both stable states with perturbing inputs.</li>
+
+        <p><strong>Dynamic Performance:</strong></p>
+        <li>Predicted snap-through times of <strong>5–20 ms</strong> depending on geometry and stiffness.</li>
+        <li>Confirmed rapid switching suitable for real-time extrusion control.</li>
+
+        <p><strong>Engineering Insight:</strong></p>
+        <li>Short snap-through times enable high-frequency flow control not possible with stepper-based systems.</li>
+        <li>Dynamic stability strongly influenced by knee angle and asymmetry parameters.</li>
+      </ul>
+    </section>
+
+    <!-- STRESS / FATIGUE -->
+    <section class="card">
+      <div class="section-kicker">Structure</div>
+      <h2>Stress, Fatigue &amp; Feasibility Assessment</h2>
+      <p class="lead">
+        Structural analysis was performed to ensure that clamp designs meet strength, fatigue, and
+        actuation-force constraints while maintaining bistability and durability.
+      </p>
+      <ul>
+        <p><strong>Stress Evaluation:</strong></p>
+        <li>Calculated stresses under occlusion force and snap-through motions.</li>
+        <li>Compared against multiple criteria: Maximum Normal Stress, Brittle Coulomb-Mohr, and Modified Mohr.</li>
+
+        <p><strong>Fatigue Assessment:</strong></p>
+        <li>Evaluated cyclic loading due to repeated clamping/unclamping.</li>
+        <li>Determined that selected ABS designs exhibit fatigue life &gt; 10⁶ cycles.</li>
+
+        <p><strong>Force Requirements:</strong></p>
+        <li>Computed occlusion force <strong>Fc</strong> for all configurations and filtered based on user-feasible actuation levels.</li>
+        <li>Assessed how spring stiffness, leg geometry, and pre-stress affect required actuation energy.</li>
+
+        <p><strong>Feasibility &amp; Safety Factors:</strong></p>
+        <li>Safety factors above <strong>24</strong> achieved for all viable designs.</li>
+        <li>Design space reduced to configurations meeting bistability + strength + manufacturability criteria.</li>
+
+        <p><strong>Engineering Insight:</strong></p>
+        <li>Bi-stable clamps can maintain high strength while using minimal actuation energy.</li>
+        <li>Fatigue behaviour of 3D-printed ABS is highly sensitive to geometry and print orientation—selective design is essential.</li>
+      </ul>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="card">
+      <div class="section-kicker">Outcome</div>
+      <h2>Results &amp; Impact</h2>
+      <ul>
+        <p>
+          The analysis confirmed that the bi-stable clamp valve is a mechanically robust, low-energy, and fast-acting solution
+          for flow regulation in embedded 3D printing. It enables precise, repeatable gel extrusion and reduces actuator mass
+          and power demand — making it suitable for integration into embedded 3D printers.
+        </p>
+      </ul>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="card">
+      <div class="section-kicker">Skills</div>
+      <h2>Skills Gained</h2>
+      <ul>
+        <li><strong>Derivation of analytical models</strong> for bistable mechanisms and strain-energy systems.</li>
+        <li><strong>Computational modelling</strong> using Python to generate and filter large parameter spaces.</li>
+        <li><strong>Energy-displacement and force-displacement analysis</strong> for nonlinear structures.</li>
+        <li><strong>ODE solving &amp; dynamics simulation</strong> using Runge–Kutta methods.</li>
+        <li><strong>Stability analysis</strong> (identifying stable/unstable equilibria and snap-through points).</li>
+        <li><strong>Material fatigue evaluation</strong> for 3D-printed ABS under cyclic loading.</li>
+        <li><strong>Stress analysis</strong> using Coulomb-Mohr, Modified Mohr, and Max-Normal criteria.</li>
+        <li><strong>Design optimisation</strong> based on URS constraints and geometry–performance trade-offs.</li>
+        <li><strong>Large-scale data processing</strong> of ~14,000 candidate designs.</li>
+        <li><strong>System-level reasoning</strong> integrating mechanics, materials, and manufacturing feasibility.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>© Bongani Dindi — Bi-stable Clamp Valve Analysis</p>
+      <p><a href="../index.html">← Back to main portfolio</a></p>
+    </footer>
+  </div>
+</body>
+</html>
