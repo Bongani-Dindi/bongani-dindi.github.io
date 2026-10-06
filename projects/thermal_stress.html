@@ -27,13 +27,27 @@
       <div class="hero-grid"><div>
         <h1 id="page-title">Piping &amp; flange thermal-stress analysis</h1><p class="lead">Investigating how temperature changes, support behaviour and joint assumptions influence a piping assembly and its bolted flange.</p><span class="status">Simulation study</span>
         <span class="reviewed">Notebook updated <time datetime="2026-10-06">6 October 2026</time></span>
-      </div><figure><img src="../images/thermal_stress.svg" width="600" height="360" alt="A global supported piping model transfers forces and moments to a detailed local bolted-flange model."><figcaption>Illustrative global-to-local analysis workflow. The schematic omits project-specific geometry and operating values.</figcaption></figure></div>
+      </div><figure><a href="../images/thermal-stress-piping-network.jpeg" target="_blank" rel="noopener" aria-label="Open the piping network illustration at full size in a new tab"><img src="../images/thermal-stress-piping-network.jpeg" width="1672" height="941" alt="Illustrative piping network with flanged connections, branches and supports" decoding="async" fetchpriority="high"></a><figcaption>Illustrative piping network showing the overall assembly, flanged connections and supports.</figcaption></figure></div>
       <dl class="project-facts"><div><dt>My role</dt><dd>Parametric modelling, load definition &amp; sensitivity planning</dd></div><div><dt>Tools & methods</dt><dd>Autodesk Fusion, finite element analysis &amp; assumption registers</dd></div><div><dt>Current focus</dt><dd>Global-to-local loads, support behaviour &amp; mesh convergence</dd></div></dl>
     </section>
-    <nav class="contents" aria-label="On this page"><span class="meta-label">On this page</span><ul><li><a href="#overview">The project</a></li><li><a href="#goals">Goals</a></li><li><a href="#technical-learning">Technical learning</a></li><li><a href="#soft-skills">Soft skills</a></li><li><a href="#progress-log">Detailed updates</a></li><li><a href="#deliverables">Deliverables</a></li></ul></nav>
+    <nav class="contents" aria-label="On this page"><span class="meta-label">On this page</span><ul><li><a href="#overview">The project</a></li><li><a href="#project-views">Project views</a></li><li><a href="#goals">Goals</a></li><li><a href="#technical-learning">Technical learning</a></li><li><a href="#soft-skills">Soft skills</a></li><li><a href="#progress-log">Detailed updates</a></li><li><a href="#deliverables">Deliverables</a></li></ul></nav>
     <section class="chapter" id="overview" aria-labelledby="overview-title">
       <div class="chapter-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="overview-title">The project</h2></div>
       <div class="chapter-body"><p>This study examines how mechanical constraints and changing thermal conditions can load a piping and flange assembly. The global model describes the overall load path and support reactions; the local model provides a more detailed view of the flange, fasteners and contact conditions.</p><p>My work includes reconstructing parametric geometry, defining load cases, documenting uncertain inputs and planning sensitivity studies. The engineering task is to establish a credible modelling basis and understand which assumptions can change the interpretation. Mesh checks, load-transfer verification and sensitivity results remain part of the evidence needed before final conclusions.</p></div>
+    </section>
+    <section class="project-views" id="project-views" aria-labelledby="project-views-title">
+      <h2 id="project-views-title">Project views</h2>
+      <p>Illustrative views of the local bolted joint and stress-analysis concept. Select an image to view it at full size.</p>
+      <div class="project-gallery">
+        <figure>
+          <a href="../images/thermal-stress-bolted-flange.jpeg" target="_blank" rel="noopener" aria-label="Open the bolted flange illustration at full size in a new tab"><img src="../images/thermal-stress-bolted-flange.jpeg" width="1672" height="941" alt="Illustrative bolted flange connection with fasteners and welded pipe ends" loading="lazy" decoding="async"></a>
+          <figcaption><strong>Bolted flange joint</strong>A visualisation of the local connection, fasteners and welded pipe ends.</figcaption>
+        </figure>
+        <figure>
+          <a href="../images/thermal-stress-flange-stress.jpeg" target="_blank" rel="noopener" aria-label="Open the flange stress visualisation at full size in a new tab"><img src="../images/thermal-stress-flange-stress.jpeg" width="1672" height="941" alt="Illustrative finite element mesh and coloured stress contour on the local flange joint" loading="lazy" decoding="async"></a>
+          <figcaption><strong>Local flange stress visualisation</strong>Illustrative mesh and stress contour for the local joint.</figcaption>
+        </figure>
+      </div>
     </section>
     <section class="chapter" id="goals" aria-labelledby="goals-title">
       <div class="chapter-heading"><span class="section-number" aria-hidden="true">02</span><h2 id="goals-title">Project goals</h2></div>
@@ -62,4 +76,3 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
