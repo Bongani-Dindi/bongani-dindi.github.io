@@ -25,7 +25,7 @@
     .container{max-width:var(--max);margin:0 auto;padding:0 24px}
 
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:30}
-    nav{display:flex;align-items:center;justify-content:space-between; height:72px}
+    nav{display:flex;align-items:center;justify-content:space-between; min-height:72px;gap:20px;flex-wrap:wrap;padding:12px 0}
     .brand{display:flex;align-items:center;gap:.75rem}
     .brand .logo{display:none}
     .brand strong{font-family:"Playfair Display", Georgia, serif; font-weight:700; font-size:20px}
@@ -34,6 +34,12 @@
     .nav-links a{padding:.65rem 1.25rem;border-right:1px solid var(--text);color:var(--text);text-transform:none;letter-spacing:.02em}
     .nav-links a:last-child{border-right:none}
     .nav-links a:hover{background:#111;color:#fff;text-decoration:none}
+    a:focus-visible{outline:2px solid var(--text);outline-offset:4px}
+    @media (max-width:760px){
+      header{position:static}
+      .nav-links{width:100%;border:none;gap:8px}
+      .nav-links a,.nav-links a:last-child{border:1px solid var(--text);padding:.55rem .75rem;font-size:14px;flex:1;text-align:center}
+    }
 
     .hero{padding:72px 0 32px;text-align:left}
     .eyebrow{letter-spacing:.35em;color:var(--muted);text-transform:uppercase;font-size:12px;margin:0 0 16px}
@@ -171,7 +177,7 @@
 <body>
   <header>
     <div class="container">
-      <nav>
+      <nav aria-label="Main navigation">
         <div class="brand">
           <div class="logo" aria-hidden="true">BD</div>
           <div>
@@ -181,6 +187,7 @@
         </div>
         <div class="nav-links">
           <a class="chip" href="#projects">Projects</a>
+          <a class="chip" href="updates.html">Updates</a>
           <a class="chip" href="#skills">Skills</a>
           <a class="chip" href="#experience">Experience</a>
           <a class="chip" href="#contact">Contact</a>
@@ -197,6 +204,7 @@
       <div class="actions">
         <a class="btn" href="BONGANI_DINDI_CV.pdf" download>Download CV</a>
         <a class="btn" href="#projects">See Projects</a>
+        <a class="btn" href="updates.html">Project updates</a>
         <a class="btn" href="mailto:bongani14d@gmail.com">Contact</a>
       </div>
       <div class="hero-card">
@@ -377,7 +385,7 @@
       <div class="card">
         <p>Want to collaborate or chat about my work? Reach out via email or LinkedIn.</p>
         <div class="socials">
-          <a class="btn" href="mailto:bongani14d@gmail.com.com">Email</a>
+          <a class="btn" href="mailto:bongani14d@gmail.com">Email</a>
           <a class="btn" href="https://www.linkedin.com/in/bongani-dindi14"
             target="_blank"
             rel="noopener noreferrer">
