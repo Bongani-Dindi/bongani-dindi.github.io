@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">Global piping and local flange analysis</title>
+  <desc id="desc">A supported piping model provides forces and moments for a more detailed local bolted-flange model.</desc>
+  <rect width="600" height="360" fill="#f7f7f5"/>
+  <g fill="none" stroke="#111" stroke-width="2">
+    <path d="M79 204h58q18 0 18-18v-43q0-18 18-18h111m-205 96h64q29 0 29-29v-46q0-4 6-4h106"/>
+    <path d="M222 142v85m-18 0h36m-29 0-7 11m16-11-7 11m16-11-7 11m16-11-7 11" stroke="#71717a"/>
+    <path d="M250 113v38m17-38v38" stroke-width="4"/>
+    <circle cx="259" cy="132" r="35" stroke="#a1a1aa" stroke-dasharray="4 5"/>
+    <path d="M294 132h52m-8-6 8 6-8 6"/>
+    <circle cx="445" cy="160" r="81" stroke="#a1a1aa"/>
+    <path d="M374 146h36v-35h24v98h-24v-35h-36m142-28h-37v-35h-25v98h25v-35h37"/>
+    <path d="M411 117h66m-66 84h66" stroke-width="4"/><path d="M443 114v92" stroke="#71717a" stroke-dasharray="4 5"/>
+  </g>
+  <g fill="#60646b" font-family="Arial,sans-serif" font-size="12" letter-spacing="1">
+    <text x="94" y="275">GLOBAL LOAD PATH</text><text x="393" y="275">LOCAL JOINT</text>
+    <text x="314" y="107" font-size="10">FORCES</text><text x="310" y="122" font-size="10">&amp; MOMENTS</text>
+    <text x="106" y="30" font-size="10" letter-spacing="2">LOADS • SUPPORTS • CONTACT • MESH</text>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">Solar, household demand and battery study</title>
+  <desc id="desc">The analysis connects PV production, household demand, battery storage and residual grid demand.</desc>
+  <rect width="600" height="360" fill="#f7f7f5"/>
+  <g fill="none" stroke="#111" stroke-width="2">
+    <path d="M92 117h121l-25 74H67zm-20 25h121m-129 25h121m-85-50-25 74m65-74-25 74M132 191v20m-24 0h48"/>
+    <path d="M262 147l51-44 51 44m-91-9v73h80v-73m-49 73v-36h20v36"/>
+    <rect x="437" y="125" width="69" height="86"/><path d="M458 125v-11h27v11m-37 24h46m-46 22h46m-46 22h46"/>
+    <path d="M219 167h45m-8-5 8 5-8 5M360 167h70m-8-5 8 5-8 5M364 184h66m-58-5-8 5 8 5"/>
+    <path d="M312 219v68m-6-8 6 8 6-8m-6 9H165m-10-18 10 18-10 18M312 288h143m-10-6 10 6-10 6" stroke="#71717a"/>
+  </g>
+  <g fill="#60646b" font-family="Arial,sans-serif" font-size="12" letter-spacing="1">
+    <text x="87" y="243">PV INPUT</text><text x="269" y="243">DEMAND</text><text x="440" y="243">STORAGE</text>
+    <text x="77" y="325">GRID BALANCE</text><text x="415" y="325">SCENARIO OUTPUTS</text>
+    <text x="106" y="30" font-size="10" letter-spacing="2">TIME SERIES → DISPATCH → COMPARISON</text>
+  </g>
+</svg>
