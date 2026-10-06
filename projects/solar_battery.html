@@ -27,13 +27,27 @@
       <div class="hero-grid"><div>
         <h1 id="page-title">Solar PV &amp; battery modelling</h1><p class="lead">An energy-analysis pipeline for comparing household demand, solar production, local batteries and shared storage.</p><span class="status">Data &amp; modelling</span>
         <span class="reviewed">Notebook updated <time datetime="2026-10-06">6 October 2026</time></span>
-      </div><figure><img src="../images/solar_battery.svg" width="600" height="360" alt="Conceptual energy flows between solar PV, household demand, battery storage and the grid balance used for scenario comparisons."><figcaption>Conceptual study flow. The diagram describes the analysis inputs and outputs; it does not represent an installed system or measured performance.</figcaption></figure></div>
+      </div><figure><a href="../images/solar-battery-cape-town-homes.webp" target="_blank" rel="noopener" aria-label="Open the Cape Town solar neighbourhood illustration at full size in a new tab"><img src="../images/solar-battery-cape-town-homes.webp" width="1672" height="941" alt="Illustrative Cape Town neighbourhood with rooftop solar panels and a shared battery station" decoding="async" fetchpriority="high"></a><figcaption>Concept illustration of Cape Town homes with rooftop solar and shared battery storage.</figcaption></figure></div>
       <dl class="project-facts"><div><dt>My role</dt><dd>Data preparation, battery simulation &amp; scenario analysis</dd></div><div><dt>Tools & methods</dt><dd>Python, pandas, NumPy, Matplotlib &amp; time-series data</dd></div><div><dt>Current focus</dt><dd>Calendar integrity, dispatch constraints &amp; interpretable economics</dd></div></dl>
     </section>
-    <nav class="contents" aria-label="On this page"><span class="meta-label">On this page</span><ul><li><a href="#overview">The project</a></li><li><a href="#goals">Goals</a></li><li><a href="#technical-learning">Technical learning</a></li><li><a href="#soft-skills">Soft skills</a></li><li><a href="#progress-log">Detailed updates</a></li><li><a href="#deliverables">Deliverables</a></li></ul></nav>
+    <nav class="contents" aria-label="On this page"><span class="meta-label">On this page</span><ul><li><a href="#overview">The project</a></li><li><a href="#project-views">Project views</a></li><li><a href="#goals">Goals</a></li><li><a href="#technical-learning">Technical learning</a></li><li><a href="#soft-skills">Soft skills</a></li><li><a href="#progress-log">Detailed updates</a></li><li><a href="#deliverables">Deliverables</a></li></ul></nav>
     <section class="chapter" id="overview" aria-labelledby="overview-title">
       <div class="chapter-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="overview-title">The project</h2></div>
       <div class="chapter-body"><p>I am developing a Python workflow that brings Cape Town PV production together with residential electricity-demand profiles. It compares direct solar use, household batteries and shared storage, then summarises the energy flows and economic assumptions behind each scenario.</p><p>The work covers data loading, household profiles, storage dispatch, analysis, plotting, optimisation and economics. Recent effort has focused on a foundation that is easy to underestimate: aligning demand and PV on a continuous calendar while retaining the distinction between measured, repeated and estimated data. The documented pipeline is a study tool; forecast validation and scenario interpretation are ongoing.</p></div>
+    </section>
+    <section class="project-views" id="project-views" aria-labelledby="project-views-title">
+      <h2 id="project-views-title">Project views</h2>
+      <p>Concept illustrations of shared and household battery storage. Select an image to view it at full size.</p>
+      <div class="project-gallery">
+        <figure>
+          <a href="../images/solar-battery-community-station.webp" target="_blank" rel="noopener" aria-label="Open the shared battery station illustration at full size in a new tab"><img src="../images/solar-battery-community-station.webp" width="1672" height="941" alt="Illustrative fenced community battery station with power equipment near homes with rooftop solar" loading="lazy" decoding="async"></a>
+          <figcaption><strong>Shared community battery station</strong>A concept view of central battery storage and power equipment serving nearby solar-equipped homes.</figcaption>
+        </figure>
+        <figure>
+          <a href="../images/solar-battery-home-cutaway.webp" target="_blank" rel="noopener" aria-label="Open the solar home cutaway illustration at full size in a new tab"><img src="../images/solar-battery-home-cutaway.webp" width="1672" height="941" alt="Illustrative cutaway of a South African home showing rooftop solar panels, living spaces, an inverter and household battery storage" loading="lazy" decoding="async"></a>
+          <figcaption><strong>Household solar and battery storage</strong>A cutaway concept showing rooftop solar, the household load and a local inverter and battery.</figcaption>
+        </figure>
+      </div>
     </section>
     <section class="chapter" id="goals" aria-labelledby="goals-title">
       <div class="chapter-heading"><span class="section-number" aria-hidden="true">02</span><h2 id="goals-title">Project goals</h2></div>
