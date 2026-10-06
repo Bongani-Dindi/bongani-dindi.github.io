@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">Lamp array and specimen-plane irradiance model</title>
+  <desc id="desc">Parallel lamp sources illuminate a specimen plane. Lamp pitch, height and edge position are inputs to a numerical model.</desc>
+  <rect width="600" height="360" fill="#f7f7f5"/>
+  <g fill="none" stroke="#111" stroke-width="2">
+    <path d="M132 230h295l66 68H198z"/><path d="M192 230l66 68m-8-68 66 68m-8-68 66 68m-8-68 66 68M154 253h295m-275 23h297" stroke="#c2c3c5"/>
+    <path d="M124 122h205m-167 24h205m-167 24h205m-167 24h205" stroke-width="6"/>
+    <path d="M143 130l12 93m50-64 38 64m54-37 36 37m46-14 40 32" stroke="#a1a1aa" stroke-dasharray="4 5"/>
+    <path d="M113 120v108m-6-108h12m-12 108h12M336 105l36 23m-38-18 5-9m28 31 6-10" stroke="#71717a"/>
+  </g>
+  <g fill="#60646b" font-family="Arial,sans-serif" font-size="12" letter-spacing="1">
+    <text x="64" y="180">HEIGHT</text><text x="356" y="95">PITCH</text>
+    <text x="225" y="326">SPECIMEN PLANE</text><text x="128" y="76">FINITE LINE SOURCES</text>
+    <text x="106" y="30" font-size="10" letter-spacing="2">GEOMETRY → MODEL → DISTRIBUTION</text>
+  </g>
+</svg>

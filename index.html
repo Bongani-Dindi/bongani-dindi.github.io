@@ -168,10 +168,27 @@
     }
 
     .card.project:hover .links a:hover {
-      color: var(--accent, #38bdf8);
+      color: #fff;
+      background: var(--text);
       opacity: 1;
     }
 
+
+    /* The recent project notebooks use lightweight concept diagrams. */
+    .card.project .thumb.diagram{padding:0;border-radius:0;display:block;background:#f7f7f5;aspect-ratio:5/3;height:auto}
+    .thumb.diagram img{display:block;width:100%;height:100%;object-fit:contain}
+    .project-label{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#60646b;margin:4px 0 0}
+    .project-status{align-self:flex-start;font-family:Arial,sans-serif;font-size:10px;border:1px solid var(--border);padding:3px 7px;color:#60646b}
+    .card-summary{font-size:14px;margin:4px 0;color:#3e4248}
+    .project-topics{font-family:Arial,sans-serif;font-size:11px;color:#60646b;margin:4px 0 8px}
+    .projects-intro{max-width:740px;margin:10px 0 22px;color:#60646b;font-size:14px}
+    button:focus-visible,.project-search input:focus-visible{outline:2px solid var(--text);outline-offset:4px}
+    .project-search{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:#60646b;margin:0 0 20px}
+    .project-search input{padding:.6rem .8rem;border:1px solid var(--border);border-radius:0;background:#fff;color:var(--text);font:inherit;max-width:100%;width:280px}
+    .project-search p{margin:0 0 0 auto}
+    .project-empty{border:1px solid var(--border);padding:24px;color:#60646b;background:#f7f7f5}
+    [hidden]{display:none!important}
+    @media(prefers-reduced-motion:reduce){.card.project,.card.project .thumb,.card.project .thumb span{transition:none}.card.project:hover,.card.project:hover .thumb,.card.project:hover .thumb span{transform:none}}
   </style>
 </head>
 <body>
@@ -210,7 +227,7 @@
       <div class="hero-card">
         <h3 style="margin-top:0">Quick facts</h3>
         <ul style="margin:0; padding-left:1.1rem">
-          <li>Engineering Projects: Perestaltic Infusion Pump Design, Bi-stable Embedded 3D Printer Valve Analysis, Wear Tester Refurbishment.</li>
+          <li>Engineering Projects: UV Ageing Chamber, Irradiance Calculator, Thermal-Stress Analysis, Infusion Pump Design, Bi-stable Valve Analysis and Wear Tester Refurbishment.</li>
           <li>Programming Skills: SolidWorks, Python, MATLAB, VBA Macros, Excel, Arduino; data + controls basics.</li>
           <li>Soft Skills: Teamwork and Leadership, Written and Verbal Communication, Problem-Solving, Work Ethic, and Creativity.</li>
           <li>Artistic Pursuits: Drawing, Piano, Painting and Writing.</li>
@@ -222,14 +239,61 @@
 
     <section id="projects">
       <h2>Highlighted projects</h2>
+      <p class="projects-intro">Explore recent engineering and software work alongside my earlier design projects. Each new project notebook includes goals, technical learning, soft skills, detailed updates and deliverables.</p>
       <p class="sub">Filter by area:</p>
-      <div class="filters" id="filters" role="tablist" aria-label="Project filters">
-        <button class="active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button data-filter="engineering" role="tab">Engineering</button>
-        <button data-filter="art" role="tab">Art</button>
-        <button data-filter="software" role="tab">Software</button>
+      <div class="filters" id="filters" role="group" aria-label="Project filters" hidden>
+        <button type="button" class="active" data-filter="all" aria-pressed="true" aria-controls="projectGrid">All</button>
+        <button type="button" data-filter="engineering" aria-pressed="false" aria-controls="projectGrid">Engineering</button>
+        <button type="button" data-filter="art" aria-pressed="false" aria-controls="projectGrid">Art</button>
+        <button type="button" data-filter="software" aria-pressed="false" aria-controls="projectGrid">Software</button>
+        <button type="button" data-filter="energy" aria-pressed="false" aria-controls="projectGrid">Energy</button>
+      </div>
+      <div class="project-search" id="project-tools" hidden>
+        <label for="project-search">Search projects</label><input type="search" id="project-search" placeholder="Find a project or topic" aria-controls="projectGrid" autocomplete="off">
+        <p id="project-count" role="status" aria-live="polite" aria-atomic="true">7 projects</p>
       </div>
       <div class="projects" id="projectGrid">
+        <article class="card project" data-tags="engineering" aria-labelledby="uv_chamber-card-title">
+          <div class="thumb diagram"><img src="images/uv_chamber.svg" width="600" height="360" alt="" loading="lazy"></div>
+          <p class="project-label">Materials testing · Engineering</p>
+          <h3 id="uv_chamber-card-title">Ultraviolet ageing chamber</h3>
+          <span class="project-status">Design &amp; planning</span>
+          <p class="card-summary">A chamber concept for controlled UV, heat and condensation exposure, developed from a laboratory service need.</p>
+          <p class="project-topics">Requirements · Subsystem design · Test planning</p>
+          <div class="tags"><span class="tag">Engineering</span></div>
+          <div class="links"><a href="projects/uv_chamber.html" aria-label="Read the UV ageing chamber project notebook">Project details ↗</a></div>
+        </article>
+        <article class="card project" data-tags="engineering software" aria-labelledby="irradiance_calculator-card-title">
+          <div class="thumb diagram"><img src="images/irradiance_calculator.svg" width="600" height="360" alt="" loading="lazy"></div>
+          <p class="project-label">Simulation tools · Engineering &amp; software</p>
+          <h3 id="irradiance_calculator-card-title">UV lamp &amp; irradiance calculator</h3>
+          <span class="project-status">Tool development</span>
+          <p class="card-summary">A Python tool connecting lamp geometry, irradiance distribution, spectral data and reproducible design comparisons.</p>
+          <p class="project-topics">Python · Numerical modelling · Data visualisation</p>
+          <div class="tags"><span class="tag">Engineering</span><span class="tag">Software</span></div>
+          <div class="links"><a href="projects/irradiance_calculator.html" aria-label="Read the Irradiance calculator project notebook">Project details ↗</a></div>
+        </article>
+        <article class="card project" data-tags="software energy" aria-labelledby="solar_battery-card-title">
+          <div class="thumb diagram"><img src="images/solar_battery.svg" width="600" height="360" alt="" loading="lazy"></div>
+          <p class="project-label">Energy systems · Software</p>
+          <h3 id="solar_battery-card-title">Solar PV &amp; battery modelling</h3>
+          <span class="project-status">Data &amp; modelling</span>
+          <p class="card-summary">A time-series pipeline comparing solar production, residential demand and battery scenarios with explicit data assumptions.</p>
+          <p class="project-topics">Energy systems · Time-series data · Battery simulation</p>
+          <div class="tags"><span class="tag">Software</span><span class="tag">Energy</span></div>
+          <div class="links"><a href="projects/solar_battery.html" aria-label="Read the Solar &amp; battery modelling project notebook">Project details ↗</a></div>
+        </article>
+        <article class="card project" data-tags="engineering" aria-labelledby="thermal_stress-card-title">
+          <div class="thumb diagram"><img src="images/thermal_stress.svg" width="600" height="360" alt="" loading="lazy"></div>
+          <p class="project-label">Mechanical analysis · Engineering</p>
+          <h3 id="thermal_stress-card-title">Piping &amp; flange thermal-stress analysis</h3>
+          <span class="project-status">Simulation study</span>
+          <p class="card-summary">A global and local FEA study of thermal loading, support conditions and bolted-flange response.</p>
+          <p class="project-topics">Finite element analysis · Model verification · Technical reporting</p>
+          <div class="tags"><span class="tag">Engineering</span></div>
+          <div class="links"><a href="projects/thermal_stress.html" aria-label="Read the Thermal-stress analysis project notebook">Project details ↗</a></div>
+        </article>
+
 
         <article class="card project" data-tags="engineering" aria-labelledby="p4-title">
           <div class="thumb" style="background-image: url('images/infusion_pump_thumb.tiff');">
@@ -288,6 +352,7 @@
           </details>
         </article>
       </div>
+      <p id="project-empty" class="project-empty" hidden>No matching projects. Try another topic or choose All and clear the search.</p>
     </section>
 
     <section id="skills">
@@ -400,60 +465,59 @@
     <div class="container">
       <div style="display:flex; justify-content:space-between; gap:1rem; align-items:center; flex-wrap:wrap">
         <small>© <span id="year"></span> Bongani Dindi</small>
-        <small>Tip: Press <span class="kbd">/</span> to filter projects by text.</small>
+        <small>Tip: Press <span class="kbd">/</span> to search projects.</small>
       </div>
     </div>
   </footer>
 
   <script>
-    // ——— small progressive enhancements ———
-    document.documentElement.classList.remove('no-js');
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-/* --- PROJECT CARD HOVER ANIMATIONS --- */
-    // Project filtering by tags
-    const buttons = [...document.querySelectorAll('.filters button')];
-    const cards = [...document.querySelectorAll('.project')];
-    const setActive = (btn)=>{ buttons.forEach(b=>b.classList.toggle('active', b===btn)); };
-    buttons.forEach(btn=>btn.addEventListener('click', ()=>{
-      const filter = btn.dataset.filter;
-      setActive(btn);
-      cards.forEach(card=>{
-        const show = filter==='all' || card.dataset.tags.includes(filter);
-        card.style.display = show ? '' : 'none';
-      });
-    }));
-
-    // Quick text filter: press / to focus a hidden input
-    const quick = document.createElement('input');
-    quick.setAttribute('type','search');
-    quick.setAttribute('placeholder','Filter projects…');
-    quick.style.position='fixed'; quick.style.top='10px'; quick.style.right='10px';
-    quick.style.padding='.6rem .8rem'; quick.style.borderRadius='10px';
-    quick.style.border='1px solid rgba(255,255,255,.2)'; quick.style.background='var(--card)'; quick.style.color='var(--text)';
-    quick.style.boxShadow='var(--shadow)'; quick.style.zIndex='50'; quick.style.display='none';
-    document.body.appendChild(quick);
-    let quickVisible = false;
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === '/'){
-        e.preventDefault(); quickVisible = !quickVisible; quick.style.display = quickVisible ? 'block' : 'none'; if(quickVisible){ quick.focus(); quick.select(); }
+    (() => {
+      document.documentElement.classList.remove('no-js');
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const buttons = [...document.querySelectorAll('#filters button')];
+      const cards = [...document.querySelectorAll('#projectGrid .project')];
+      const search = document.getElementById('project-search');
+      const count = document.getElementById('project-count');
+      const empty = document.getElementById('project-empty');
+      const normalize = value => value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+      const searchable = new Map(cards.map(card => [card, normalize(card.textContent)]));
+      let activeFilter = 'all';
+      function applyFilters() {
+        const words = normalize(search.value.trim()).split(/\s+/).filter(Boolean);
+        let visible = 0;
+        cards.forEach(card => {
+          const categoryMatches = activeFilter === 'all' || card.dataset.tags.split(/\s+/).includes(activeFilter);
+          const textMatches = words.every(word => searchable.get(card).includes(word));
+          card.hidden = !(categoryMatches && textMatches);
+          if (!card.hidden) visible += 1;
+        });
+        buttons.forEach(button => {
+          const active = button.dataset.filter === activeFilter;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+        count.textContent = visible === cards.length ? `${visible} projects` : `${visible} of ${cards.length} projects`;
+        empty.hidden = visible !== 0;
       }
-    });
-    quick.addEventListener('input', ()=>{
-      const q = quick.value.toLowerCase();
-      cards.forEach(card=>{
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(q) ? '' : 'none';
+      buttons.forEach(button => button.addEventListener('click', () => {
+        activeFilter = button.dataset.filter;
+        applyFilters();
+      }));
+      search.addEventListener('input', applyFilters);
+      document.addEventListener('keydown', event => {
+        const target = event.target;
+        const editing = target && (target.matches('input, textarea, select') || target.isContentEditable);
+        if (event.key === '/' && !editing && !event.ctrlKey && !event.metaKey && !event.altKey) {
+          event.preventDefault();
+          search.focus();
+          search.select();
+          search.scrollIntoView({block:'center'});
+        }
       });
-    });
-
-    // Smooth scrolling for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href').slice(1);
-        if(id){ e.preventDefault(); document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
-      });
-    });
+      document.getElementById('filters').hidden = false;
+      document.getElementById('project-tools').hidden = false;
+      applyFilters();
+    })();
   </script>
 </body>
 </html>

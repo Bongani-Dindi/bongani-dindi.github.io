@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">UV ageing chamber concept</title>
+  <desc id="desc">An enclosure combines UV lamps, a specimen plane, temperature sensing and a condensation water system.</desc>
+  <rect width="600" height="360" fill="#f7f7f5"/>
+  <g fill="none" stroke="#111" stroke-width="2">
+    <path d="M105 80h350v230H105z"/><path d="M124 99h312v165H124z" stroke="#a1a1aa"/>
+    <path d="M150 125h260m-260 15h260m-260 15h260" stroke-width="5"/>
+    <path d="M175 172v36m55-36v36m55-36v36m55-36v36m55-36v36" stroke="#a1a1aa" stroke-dasharray="4 5"/>
+    <path d="M147 218h268v22H147z"/><path d="M153 275q16-12 32 0t32 0t32 0t32 0t32 0t32 0t32 0t32 0"/>
+    <path d="M409 213h33v-31h37"/><circle cx="405" cy="224" r="6" fill="#111"/>
+    <path d="M285 98V63m-65 174v94m195-36h68" stroke="#71717a"/>
+  </g>
+  <g fill="#60646b" font-family="Arial,sans-serif" font-size="12" letter-spacing="1">
+    <text x="218" y="48">UV LAMP BANK</text><text x="172" y="347">SPECIMENS</text>
+    <text x="481" y="181">SENSOR</text><text x="485" y="299">WATER</text>
+    <text x="106" y="30" font-size="10" letter-spacing="2">EXPOSURE • TEMPERATURE • MOISTURE</text>
+  </g>
+</svg>
