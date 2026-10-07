@@ -11,6 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="project-notebook.css">
+  <style>
+    .hero-grid.irradiance-hero{grid-template-columns:minmax(0,1fr);gap:28px}
+    .irradiance-hero figure{width:100%;max-width:none}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,10 +28,10 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html#projects">All projects</a><span aria-hidden="true">/</span><span aria-current="page">Irradiance calculator</span></nav>
     <section class="hero" aria-labelledby="page-title">
       <p class="eyebrow">Project notebook 02 · Simulation tools · Engineering &amp; software</p>
-      <div class="hero-grid"><div>
+      <div class="hero-grid irradiance-hero"><div>
         <h1 id="page-title">UV lamp &amp; irradiance calculator</h1><p class="lead">A Python design tool for exploring lamp geometry, relative irradiance, spectral data and the quality of exposure across a specimen plane.</p><span class="status">Tool development</span>
-        <span class="reviewed">Notebook updated <time datetime="2026-10-06">6 October 2026</time></span>
-      </div><figure><img src="../images/irradiance_calculator.svg" width="600" height="360" alt="Parallel finite lamp sources above a gridded specimen plane, showing lamp pitch and height as model inputs."><figcaption>Geometry schematic of the numerical model. It illustrates the inputs and specimen plane rather than a calculated irradiance result.</figcaption></figure></div>
+        <span class="reviewed">Notebook updated <time datetime="2026-10-07">7 October 2026</time></span>
+      </div><figure><a href="../images/uv-irradiance-heatmap.svg" target="_blank" rel="noopener" aria-label="Open the irradiance heatmap and centreline profiles at full size in a new tab"><img src="../images/uv-irradiance-heatmap.svg" width="947" height="796" alt="Specimen-plane spectral irradiance heatmap with contour levels and longitudinal and transverse centreline profiles, shown as a percentage of the maximum" decoding="async" fetchpriority="high"></a><figcaption>Specimen-plane spectral irradiance, shown as a percentage of the maximum, with longitudinal and transverse centreline profiles.</figcaption></figure></div>
       <dl class="project-facts"><div><dt>My role</dt><dd>Numerical modelling, interface design &amp; interpretation</dd></div><div><dt>Tools & methods</dt><dd>Python, NumPy, Matplotlib &amp; Tkinter</dd></div><div><dt>Current focus</dt><dd>Lamp layout, spatial uniformity, spectral units &amp; validation</dd></div></dl>
     </section>
     <nav class="contents" aria-label="On this page"><span class="meta-label">On this page</span><ul><li><a href="#overview">The project</a></li><li><a href="#goals">Goals</a></li><li><a href="#technical-learning">Technical learning</a></li><li><a href="#soft-skills">Soft skills</a></li><li><a href="#progress-log">Detailed updates</a></li><li><a href="#deliverables">Deliverables</a></li></ul></nav>
