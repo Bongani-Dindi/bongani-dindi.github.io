@@ -3,14 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Me – Bongani Dindi</title>
+  <title>About me – Bongani Dindi</title>
   <meta name="description" content="My goals, personality, technical skills and approach to engineering, learning and teamwork. I’m Bongani Dindi, with a background in mechanical engineering at the University of Cape Town.">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About me – Bongani Dindi">
+  <meta property="og:description" content="I’m Bongani Dindi. My background is in mechanical engineering at the University of Cape Town.">
+  <meta property="og:url" content="https://bongani-dindi.github.io/about.html">
+  <meta property="og:image" content="https://bongani-dindi.github.io/images/bongani-dindi.jpeg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="projects/project-notebook.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +38,7 @@
   </header>
 
   <main class="container" id="main" tabindex="-1">
-    <section class="hero about-hero" aria-labelledby="page-title">
+    <section class="hero page-hero" aria-labelledby="page-title">
       <p class="eyebrow">My background, values &amp; direction</p>
       <div class="hero-grid">
         <div>
@@ -137,7 +144,16 @@
     <p class="contact-note">I’m always interested in thoughtful conversations about engineering, learning and collaboration. <a href="mailto:bongani14d@gmail.com">Get in touch ↗</a></p>
   </main>
 
-  <footer><div class="container footer-row"><p>© <span id="year">2026</span> Bongani Dindi</p><a href="index.html">Back to the portfolio ↑</a></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© <span data-year>2026</span> Bongani Dindi</p>
+      <ul class="footer-links">
+        <li><a href="mailto:bongani14d@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/bongani-dindi14" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="BONGANI_DINDI_CV.pdf" download>CV</a></li>
+        <li><a href="index.html">Back to the portfolio ↑</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
