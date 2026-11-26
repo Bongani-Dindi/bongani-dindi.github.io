@@ -7,28 +7,30 @@
   <meta name="description" content="A Python design tool for exploring lamp geometry, relative irradiance, spectral data and the quality of exposure across a specimen plane. Project goals, technical learning, soft skills, progress updates and deliverables.">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="UV lamp &amp; irradiance calculator – Bongani Dindi">
+  <meta property="og:description" content="A Python design tool for exploring lamp geometry, relative irradiance, spectral data and the quality of exposure across a specimen plane.">
+  <meta property="og:url" content="https://bongani-dindi.github.io/projects/irradiance_calculator.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="project-notebook.css">
-  <style>
-    .hero-grid.irradiance-hero{grid-template-columns:minmax(0,1fr);gap:28px}
-    .irradiance-hero figure{width:100%;max-width:none}
-  </style>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><div class="container">
     <nav class="site-nav" aria-label="Main navigation">
       <a class="brand" href="../index.html"><strong>Bongani Dindi</strong><br><small>Mechanical Engineering • UCT ’26</small></a>
-      <div class="nav-links"><a href="../index.html#projects">Projects</a><a href="../updates.html">Updates</a><a href="../about.html">About me</a><a href="../index.html#skills">Skills</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></div>
+      <div class="nav-links"><a href="../index.html#projects" aria-current="true">Projects</a><a href="../updates.html">Updates</a><a href="../about.html">About me</a><a href="../index.html#skills">Skills</a><a href="../index.html#experience">Experience</a><a href="../index.html#contact">Contact</a></div>
     </nav>
   </div></header>
   <main class="container" id="main" tabindex="-1">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html#projects">All projects</a><span aria-hidden="true">/</span><span aria-current="page">Irradiance calculator</span></nav>
     <section class="hero" aria-labelledby="page-title">
       <p class="eyebrow">Project notebook 02 · Simulation tools · Engineering &amp; software</p>
-      <div class="hero-grid irradiance-hero"><div>
+      <div class="hero-grid is-stacked"><div>
         <h1 id="page-title">UV lamp &amp; irradiance calculator</h1><p class="lead">A Python design tool for exploring lamp geometry, relative irradiance, spectral data and the quality of exposure across a specimen plane.</p><span class="status">Tool development</span>
         <span class="reviewed">Notebook updated <time datetime="2026-10-07">7 October 2026</time></span>
       </div><figure><a href="../images/uv-irradiance-heatmap.svg" target="_blank" rel="noopener" aria-label="Open the irradiance heatmap and centreline profiles at full size in a new tab"><img src="../images/uv-irradiance-heatmap.svg" width="947" height="796" alt="Specimen-plane spectral irradiance heatmap with contour levels and longitudinal and transverse centreline profiles, shown as a percentage of the maximum" decoding="async" fetchpriority="high"></a><figcaption>Specimen-plane spectral irradiance, shown as a percentage of the maximum, with longitudinal and transverse centreline profiles.</figcaption></figure></div>
@@ -62,8 +64,16 @@
     <section class="next-block" aria-labelledby="next-title"><h2 id="next-title">Next focus</h2><p>Establish the appropriate lamp radiant-output input, measure exposure on the specimen plane, and compare the measured map with the numerical prediction. Use that comparison to refine assumptions and support the chamber’s lamp-layout decision.</p><div class="related"><a href="uv_chamber.html">Explore the UV chamber <span aria-hidden="true">↗</span></a><a href="../updates.html#irradiance-calculator">Back to the update note <span aria-hidden="true">↗</span></a><a href="../index.html#projects">All projects <span aria-hidden="true">↗</span></a></div></section>
     <p class="contact-note">Interested in this project or a collaboration? <a href="mailto:bongani14d@gmail.com">Get in touch ↗</a></p>
   </main>
-  <footer><div class="container footer-row"><p>© <span id="year">2026</span> Bongani Dindi</p><a href="../index.html#projects">Back to the portfolio ↑</a></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© <span data-year>2026</span> Bongani Dindi</p>
+      <ul class="footer-links">
+        <li><a href="mailto:bongani14d@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/bongani-dindi14" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="../BONGANI_DINDI_CV.pdf" download>CV</a></li>
+        <li><a href="../index.html#projects">Back to the portfolio ↑</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
-
